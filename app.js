@@ -236,6 +236,7 @@ const SIZE = 6;
 const CELL = 100 / SIZE;
 
 const boardEl = document.getElementById("board");
+const exitMarkerEl = document.getElementById("exitMarker");
 const stageLabel = document.getElementById("stageLabel");
 const moveCountEl = document.getElementById("moveCount");
 const clearCountEl = document.getElementById("clearCount");
@@ -420,13 +421,10 @@ function drawGrid() {
 
 function drawExitGate() {
   const a = state.pieces.A;
-  if (!a || a.orientation !== "h") return;
+  if (!a || a.orientation !== "h" || !exitMarkerEl) return;
   const [row] = rc(a.cells[0]);
-  const gate = document.createElement("div");
-  gate.className = "exit-gate";
-  gate.style.top = `${row * CELL + CELL * 0.12}%`;
-  gate.style.height = `${CELL * 0.76}%`;
-  boardEl.appendChild(gate);
+  exitMarkerEl.style.top = `${row * CELL + CELL * 0.12}%`;
+  exitMarkerEl.style.height = `${CELL * 0.76}%`;
 }
 
 function drawPieces() {
