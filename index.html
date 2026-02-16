@@ -1,0 +1,53 @@
+﻿<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>피라미드탈출</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <h1>피라미드탈출</h1>
+      <p class="subtitle">공개 퍼즐 기반 언블록미 (벽 없는 스테이지)</p>
+    </header>
+
+    <section class="hud">
+      <div><strong>스테이지</strong> <span id="stageLabel"></span></div>
+      <div><strong>이동</strong> <span id="moveCount">0</span></div>
+      <div><strong>클리어</strong> <span id="clearCount">0 / 0</span></div>
+    </section>
+
+    <section class="audio-panel">
+      <button id="audioToggle" type="button">사운드 켜기</button>
+      <label>배경음
+        <input id="musicLevel" type="range" min="0" max="100" value="45" />
+      </label>
+      <label>효과음
+        <input id="fxLevel" type="range" min="0" max="100" value="70" />
+      </label>
+    </section>
+
+    <section class="board-wrap">
+      <div id="board" class="board" aria-label="게임 보드"></div>
+    </section>
+
+    <p class="hint">블록을 터치/드래그해서 이동하세요</p>
+
+    <section class="source">
+      <h2>스테이지 출처</h2>
+      <p>
+        Michael Fogleman의 공개 Rush Hour 데이터베이스
+        <code>rush1000.txt</code>에서 벽(<code>x</code>)이 없는 퍼즐만 선별해 사용했습니다.
+        <a href="https://www.michaelfogleman.com/rush/" target="_blank" rel="noreferrer">원문</a>
+      </p>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
